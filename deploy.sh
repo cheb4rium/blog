@@ -1,9 +1,24 @@
 #!/bin/bash
 
-echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
-
 # Build the project.
 hugo -t ananke # if using a theme, replace with `hugo -t <YOURTHEME>`
+
+# DEPLOYING SOURCE TO /BLOG
+echo -e "\033[0;32mDeploying updates to GitHub-source...\033[0m"
+git add .
+
+# Commit changes.
+msg="rebuilding site `date`"
+if [ $# -eq 1 ]
+  then msg="$1"
+fi
+git commit -m "$msg"
+
+# Push source and build repos.
+git push origin master
+
+# DEPLOYING PUBLIC TO .IO 
+echo -e "\033[0;32mDeploying updates to GitHub-public...\033[0m"
 
 # Go To Public folder
 cd public
