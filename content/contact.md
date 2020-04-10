@@ -9,6 +9,6 @@ menu:
 
 You can reach me by emailing direct to 
 
-**cheba [at] protonmail [dot] ch** or filling out the form below
+**cheba [at] protonmail [.] ch** or filling out the form below
 
 {{< form-contact action="https://formspree.io/cheba@protonmail.ch"  >}}
